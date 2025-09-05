@@ -10,8 +10,7 @@ const ProjectsSection = () => {
       tech: ["React (Vite)", "Flask", "SQLite", "HuggingFace API", "OCR", "TailwindCSS", "Shadcn UI"],
       github: "https://github.com/shamaiem10/Vytal",
       color: "bg-sticky-yellow",
-      icon: <FileText className="h-6 w-6" />,
-      featured: true
+      icon: <FileText className="h-6 w-6" />
     },
     {
       title: "ServeSpace",
@@ -83,7 +82,7 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div key={project.title} className="animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
               {/* Project spread like notebook pages */}
-              <div className={`relative ${project.featured ? 'lg:scale-105' : ''}`}>
+              <div className="relative">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-card p-8 rounded-lg shadow-lg border-2 border-border">
                   {/* Left page - Project info */}
                   <div className="space-y-6">
@@ -95,13 +94,6 @@ const ProjectsSection = () => {
                         <h3 className="text-2xl font-handwritten text-primary">{project.title}</h3>
                         <p className="text-sm font-body text-muted-foreground">{project.subtitle}</p>
                       </div>
-                      {project.featured && (
-                        <div className="ml-auto">
-                          <span className="bg-accent px-3 py-1 rounded-full text-xs font-handwritten text-foreground">
-                            Latest
-                          </span>
-                        </div>
-                      )}
                     </div>
 
                     <p className="font-body text-foreground leading-relaxed text-lg">
@@ -126,12 +118,6 @@ const ProjectsSection = () => {
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github className="h-4 w-4 mr-2" />
                           View Code
-                        </a>
-                      </Button>
-                      <Button asChild variant="outline" className="font-body">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          Learn More
                         </a>
                       </Button>
                     </div>

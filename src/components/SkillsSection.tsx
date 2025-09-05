@@ -58,13 +58,6 @@ const SkillsSection = () => {
       provider: "IBM",
       priority: 5,
       link: "https://drive.google.com/file/d/1LwM401HXy7-Bz01yr9vTkgVHTo_LpsVd/view?usp=sharing"
-    },
-    {
-      title: "McKinsey Forward Program",
-      provider: "McKinsey & Company",
-      priority: 6,
-      inProgress: true,
-      expectedDate: "Oct 2025"
     }
   ];
 
@@ -129,19 +122,12 @@ const SkillsSection = () => {
                   onClick={cert.link ? () => window.open(cert.link, '_blank') : undefined}
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${cert.inProgress ? 'bg-accent' : 'bg-primary'}`}>
-                      <span className={`font-handwritten font-bold ${cert.inProgress ? 'text-foreground' : 'text-primary-foreground'}`}>
-                        {cert.inProgress ? '🔄' : cert.priority}
-                      </span>
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                      <span className="text-primary-foreground font-handwritten font-bold">{cert.priority}</span>
                     </div>
                     <div className="flex-1">
                       <h4 className="font-body font-semibold text-foreground text-lg mb-2">{cert.title}</h4>
                       <p className="font-body text-muted-foreground">{cert.provider}</p>
-                      {cert.inProgress && (
-                        <p className="font-body text-sm text-accent/80 mt-1">
-                          In Progress • Expected {cert.expectedDate}
-                        </p>
-                      )}
                       {cert.link && (
                         <p className="font-body text-xs text-primary mt-2">
                           Click to view certificate →
