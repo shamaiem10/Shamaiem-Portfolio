@@ -4,6 +4,16 @@ import { Button } from '@/components/ui/button';
 const ProjectsSection = () => {
   const projects = [
     {
+      title: "Vytal",
+      subtitle: "Neuravia Hacks 2025 - Hackathon Project",
+      description: "AI-powered health & wellness companion featuring diary logging, mood analysis, OCR-based prescription management, and dynamic visual insights for comprehensive health tracking.",
+      tech: ["React (Vite)", "Flask", "SQLite", "HuggingFace API", "OCR", "TailwindCSS", "Shadcn UI"],
+      github: "https://github.com/shamaiem10/Vytal",
+      color: "bg-sticky-yellow",
+      icon: <FileText className="h-6 w-6" />,
+      featured: true
+    },
+    {
       title: "ServeSpace",
       subtitle: "Volunteer Management Web Application",
       description: "A comprehensive platform that helps organizations manage volunteers, track hours, and schedule events efficiently. Built with a focus on user experience and administrative functionality.",
@@ -13,23 +23,49 @@ const ProjectsSection = () => {
       icon: <Heart className="h-6 w-6" />
     },
     {
+      title: "Sync",
+      subtitle: "Project Manager for University Students",
+      description: "Lightweight web app for students to manage assignments, tasks, and team projects with authentication, project/task management, team collaboration, and dashboard UI.",
+      tech: ["Python (Flask)", "HTML", "CSS", "JavaScript", "SQLite"],
+      github: "https://github.com/shamaiem10/Sync",
+      color: "bg-sticky-pink",
+      icon: <FileText className="h-6 w-6" />
+    },
+    {
       title: "Vigilantia",
       subtitle: "Security Management System",
       description: "Real-time monitoring and incident management system designed for safety improvement. Features advanced computer vision capabilities and barcode scanning integration.",
       tech: ["Java", "OpenCV", "ZXing"],
       github: "https://github.com/shamaiem10/Vigilantia-Security-Management-System",
-      color: "bg-sticky-pink",
+      color: "bg-sticky-green",
       icon: <Shield className="h-6 w-6" />
     },
     {
-      title: "Vytal",
-      subtitle: "Neuravia Hacks 2025 - Hackathon Project",
-      description: "AI-powered health & wellness companion featuring diary logging, mood analysis, OCR-based prescription management, and dynamic visual insights for comprehensive health tracking.",
-      tech: ["React (Vite)", "Flask", "SQLite", "HuggingFace API", "OCR", "TailwindCSS", "Shadcn UI"],
-      github: "https://github.com/shamaiem10/Vytal",
+      title: "Persona",
+      subtitle: "CS Girlies Hackathon Project",
+      description: "Pastel-themed digital sanctuary for alter-ego creation, AI-powered group chat, goal tracking, and journaling with a focus on mental wellness and creativity.",
+      tech: ["Flask", "SQLite", "HTML/CSS", "HuggingFace API"],
+      github: "https://github.com/shamaiem10/Persona-Build-Your-Inner-Worlds",
+      color: "bg-sticky-blue",
+      icon: <Heart className="h-6 w-6" />
+    },
+    {
+      title: "NewLinker",
+      subtitle: "News Article Search Engine",
+      description: "Aggregates articles from multiple sources, enabling keyword/topic-based search with a clean and intuitive interface for information discovery.",
+      tech: ["HTML", "CSS", "JavaScript", "Python", "Flask", "JSON"],
+      github: "#",
       color: "bg-sticky-yellow",
-      icon: <FileText className="h-6 w-6" />,
-      featured: true
+      icon: <ExternalLink className="h-6 w-6" />
+    },
+    {
+      title: "Botanical Bliss",
+      subtitle: "Plant Nursery Simulator",
+      description: "GUI-based simulator for plant purchasing, care tips, and cart management with custom-designed visuals and interactive plant care features.",
+      tech: ["Java", "Swing", "File Handling", "Custom Graphics"],
+      github: "https://github.com/shamaiem10/Botanical-Bliss",
+      color: "bg-sticky-pink",
+      icon: <Heart className="h-6 w-6" />
     }
   ];
 

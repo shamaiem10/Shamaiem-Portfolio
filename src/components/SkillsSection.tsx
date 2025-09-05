@@ -30,19 +30,41 @@ const SkillsSection = () => {
 
   const certifications = [
     {
-      title: "AI for Everyone",
+      title: "AI For Everyone",
       provider: "Andrew Ng, DeepLearning.AI",
-      priority: 1
+      priority: 1,
+      link: "https://drive.google.com/file/d/1b5cm4-rNawkpWhWrzaQrI_AHNYL7KBzh/view?usp=sharing"
     },
     {
       title: "Python for Data Science & AI",
       provider: "IBM",
-      priority: 2
+      priority: 2,
+      link: "https://drive.google.com/file/d/1-b_xRRbAFiek4w1jajoUzaDJP_PI_qvJ/view?usp=sharing"
+    },
+    {
+      title: "Flask for Beginners: Templates",
+      provider: "Coursera",
+      priority: 3,
+      link: "https://drive.google.com/file/d/1c9OcwSJF78o79p0hXNjgblPqnE6Wh6uM/view?usp=sharing"
+    },
+    {
+      title: "Introduction to Flask Framework",
+      provider: "Duke University",
+      priority: 4,
+      link: "https://drive.google.com/file/d/1gYRKyCb8KmD-Y3IDvZuNuHuK6bZRl_ow/view?usp=sharing"
     },
     {
       title: "Data Analysis with Python",
       provider: "IBM",
-      priority: 3
+      priority: 5,
+      link: "https://drive.google.com/file/d/1LwM401HXy7-Bz01yr9vTkgVHTo_LpsVd/view?usp=sharing"
+    },
+    {
+      title: "McKinsey Forward Program",
+      provider: "McKinsey & Company",
+      priority: 6,
+      inProgress: true,
+      expectedDate: "Oct 2025"
     }
   ];
 
@@ -102,16 +124,29 @@ const SkillsSection = () => {
               {certifications.map((cert, index) => (
                 <div 
                   key={cert.title}
-                  className="bg-card p-6 rounded-lg shadow-lg border-l-4 border-primary animate-fade-in-up"
+                  className={`bg-card p-6 rounded-lg shadow-lg border-l-4 border-primary animate-fade-in-up ${cert.link ? 'cursor-pointer hover:shadow-xl transition-shadow' : ''}`}
                   style={{animationDelay: `${index * 0.2}s`}}
+                  onClick={cert.link ? () => window.open(cert.link, '_blank') : undefined}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                      <span className="text-primary-foreground font-handwritten font-bold">{cert.priority}</span>
+                    <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${cert.inProgress ? 'bg-accent' : 'bg-primary'}`}>
+                      <span className={`font-handwritten font-bold ${cert.inProgress ? 'text-foreground' : 'text-primary-foreground'}`}>
+                        {cert.inProgress ? '🔄' : cert.priority}
+                      </span>
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h4 className="font-body font-semibold text-foreground text-lg mb-2">{cert.title}</h4>
                       <p className="font-body text-muted-foreground">{cert.provider}</p>
+                      {cert.inProgress && (
+                        <p className="font-body text-sm text-accent/80 mt-1">
+                          In Progress • Expected {cert.expectedDate}
+                        </p>
+                      )}
+                      {cert.link && (
+                        <p className="font-body text-xs text-primary mt-2">
+                          Click to view certificate →
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
