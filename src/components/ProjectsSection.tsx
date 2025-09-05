@@ -10,7 +10,8 @@ const ProjectsSection = () => {
       tech: ["React (Vite)", "Flask", "SQLite", "HuggingFace API", "OCR", "TailwindCSS", "Shadcn UI"],
       github: "https://github.com/shamaiem10/Vytal",
       color: "bg-sticky-yellow",
-      icon: <FileText className="h-6 w-6" />
+      icon: <FileText className="h-6 w-6" />,
+      image: "/screenshots/vytal.jpeg"
     },
     {
       title: "ServeSpace",
@@ -19,7 +20,8 @@ const ProjectsSection = () => {
       tech: ["Django", "SQL", "Bootstrap", "JavaScript"],
       github: "https://github.com/shamaiem10/ServeSpace",
       color: "bg-sticky-blue",
-      icon: <Heart className="h-6 w-6" />
+      icon: <Heart className="h-6 w-6" />,
+      image: "/screenshots/servespace.jpeg"
     },
     {
       title: "Sync",
@@ -28,7 +30,8 @@ const ProjectsSection = () => {
       tech: ["Python (Flask)", "HTML", "CSS", "JavaScript", "SQLite"],
       github: "https://github.com/shamaiem10/Sync",
       color: "bg-sticky-pink",
-      icon: <FileText className="h-6 w-6" />
+      icon: <FileText className="h-6 w-6" />,
+      image: "/screenshots/sync.jpeg"
     },
     {
       title: "Vigilantia",
@@ -37,7 +40,8 @@ const ProjectsSection = () => {
       tech: ["Java", "OpenCV", "ZXing"],
       github: "https://github.com/shamaiem10/Vigilantia-Security-Management-System",
       color: "bg-sticky-green",
-      icon: <Shield className="h-6 w-6" />
+      icon: <Shield className="h-6 w-6" />,
+      image: "/screenshots/vigilantia.jpeg"
     },
     {
       title: "Persona",
@@ -46,7 +50,8 @@ const ProjectsSection = () => {
       tech: ["Flask", "SQLite", "HTML/CSS", "HuggingFace API"],
       github: "https://github.com/shamaiem10/Persona-Build-Your-Inner-Worlds",
       color: "bg-sticky-blue",
-      icon: <Heart className="h-6 w-6" />
+      icon: <Heart className="h-6 w-6" />,
+      image: "/screenshots/persona.jpeg"
     },
     {
       title: "NewLinker",
@@ -55,7 +60,8 @@ const ProjectsSection = () => {
       tech: ["HTML", "CSS", "JavaScript", "Python", "Flask", "JSON"],
       github: "#",
       color: "bg-sticky-yellow",
-      icon: <ExternalLink className="h-6 w-6" />
+      icon: <ExternalLink className="h-6 w-6" />,
+      image: "/screenshots/newslinker.jpeg"
     },
     {
       title: "Botanical Bliss",
@@ -64,7 +70,8 @@ const ProjectsSection = () => {
       tech: ["Java", "Swing", "File Handling", "Custom Graphics"],
       github: "https://github.com/shamaiem10/Botanical-Bliss",
       color: "bg-sticky-pink",
-      icon: <Heart className="h-6 w-6" />
+      icon: <Heart className="h-6 w-6" />,
+      image: "/screenshots/botanicalbliss.jpeg"
     }
   ];
 
@@ -80,7 +87,7 @@ const ProjectsSection = () => {
 
         <div className="space-y-12">
           {projects.map((project, index) => (
-            <div key={project.title} className="animate-fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
+            <div key={project.title} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
               {/* Project spread like notebook pages */}
               <div className="relative">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-card p-8 rounded-lg shadow-lg border-2 border-border">
@@ -126,15 +133,23 @@ const ProjectsSection = () => {
                   {/* Right page - Visual representation */}
                   <div className="flex items-center justify-center">
                     <div className={`w-full max-w-md aspect-video rounded-lg ${project.color} flex items-center justify-center border-2 border-dashed border-foreground/20 sticky-note`}>
-                      <div className="text-center p-6">
-                        <div className="text-4xl mb-4">{project.icon}</div>
-                        <p className="font-handwritten text-lg text-foreground">
-                          {project.title}
-                        </p>
-                        <p className="font-body text-sm text-foreground/70 mt-2">
-                          Screenshot placeholder
-                        </p>
-                      </div>
+                      {project.image ? (
+                        <img
+                          src={project.image}
+                          alt={`${project.title} screenshot`}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      ) : (
+                        <div className="text-center p-6">
+                          <div className="text-4xl mb-4">{project.icon}</div>
+                          <p className="font-handwritten text-lg text-foreground">
+                            {project.title}
+                          </p>
+                          <p className="font-body text-sm text-foreground/70 mt-2">
+                            Screenshot placeholder
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
